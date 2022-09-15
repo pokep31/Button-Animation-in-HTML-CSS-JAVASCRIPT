@@ -15,17 +15,45 @@ body{
 }
 
 .button{
+  display: flex;
+  align-items: center;
   padding: 20px 36px;
   background-color: #4070f4;
   border-radius: 8px;
   box-shadow: 0 5px 10px rgba(0,0,0,0.2);
   cursor: pointer;
+  user-select: none;
 }
 
 .button .icon{
   font-size: 28px;
   color: #fff;
   margin-right: 10px;
+  display: none;
+}
+
+.button.checked .icon{
+  display: flex;
+}
+
+.icon.spinner.spin{
+  animation: spin 1.3s ease-in-out infinite;
+}
+@keyframes spin{
+  100%{
+    transform: rotate(360deg);
+  }
+}
+
+.icon.check{
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #6e93f7;
 }
 
 .button .btn-text{
